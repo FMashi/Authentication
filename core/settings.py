@@ -36,7 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'authentication',
-    'userprofile',
+    # 'userprofile',
     'import_export',
     'crispy_forms',
     'corsheaders',
