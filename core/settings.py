@@ -24,7 +24,7 @@ BASE_URL = os.environ.get("BASE_URL")
 SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
 DEBUG=str(os.environ.get("DEBUG")) =="1"
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost']
 
 INSTALLED_APPS = [
     'jazzmin',
@@ -35,9 +35,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
-    'authentication',
-    # 'userprofile',
-    'import_export',
+    'authentication', 
     'crispy_forms',
     'corsheaders',
     'rest_framework',

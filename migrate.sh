@@ -1,21 +1,17 @@
 #!/bin/sh
+# migrate.sh
 
-# Set the application port, default to 8000
-APP_PORT=${PORT:-8000}
-
+# Change to the app directory
 cd /app/
 
-
+# Activate the virtual environment
 source /opt/venv/bin/activate
 
-
+# Run migrations with --noinput flag
 /opt/venv/bin/python manage.py migrate --noinput
 
+# Set the DJANGO_SUPERUSER_EMAIL variable or use a default value
+SUPERUSER_EMAIL="${DJANGO_SUPERUSER_EMAIL:-admin@gmail.com}"
 
-SUPERUSER_EMAIL=${DJANGO_SUPERUSER_EMAIL:-"admin@gmail.com"}
-
-
-/opt/venv/bin/python manage.py createsuperuser --email $SUPERUSER_EMAIL --noinput || true
-
-
-/opt/venv/bin/gunicorn --worker-tmp-dir /dev/shm core.wsgi:application --bind "0.0.0.0:${APP_PORT}"
+# Create a superuser with the specified email
+/opt/venv/bin/python manage.py createsuperuser --email "$SUPERUSER_EMAIL" --noinput || true
