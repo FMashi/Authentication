@@ -24,7 +24,7 @@ BASE_URL = os.environ.get("BASE_URL")
 SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
 DEBUG=str(os.environ.get("DEBUG")) =="1"
 
-ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'jazzmin',
