@@ -58,32 +58,6 @@ To get started with the Django Authentication Application, follow these steps:
 
     pip install -r requirements.txt
 
-**🔑 Set Up Environment Variables:** Create a **.env** file in the project's root directory with your Django project and configuration variables, such as:
-
-    SECRET_KEY = your secret key
-    DEBUG = 1
-    POSTGRES_READY = 0  # Set to 1 if using Postgres
-
-    # Postgres Database Configuration
-    POSTGRES_DBNAME = your Postgres database Name
-    POSTGRES_PASSWORD = your Postgres password
-    POSTGRES_USER = your Postgres user
-    POSTGRES_HOST = your Postgres host
-    POSTGRES_PORT = your Postgres port
-
-    # Redis Configuration
-    REDIS_HOST = your Redis host
-    REDIS_PORT = your Redis Port
-
-    # Email SMTP Configuration
-    EMAIL_HOST = your email host
-    EMAIL_USE_TLS = True
-    EMAIL_HOST_USER = your email user
-    EMAIL_HOST_PASSWORD = your email password
-    EMAIL_PORT = your email port
-
-##### Add other environment variables as needed
-
 **🖇️ Apply Database Migrations:** Run database migrations to create the database schema:
 
     python manage.py makemigrations
