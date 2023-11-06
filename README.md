@@ -41,7 +41,14 @@ To get started with the Django Authentication Application, follow these steps:
 
 #### Prerequisites
 
-**🐍 Python**: Ensure you have Python installed. You can download Python from the [official Python website](https://www.python.org/downloads/).
+**1. 🐍 Python**: Ensure you have Python installed. You can download Python from the [official Python website](https://www.python.org/downloads/).
+
+**2. 🗂️ Install virtualenv**:
+If you don't already have [virtualenv](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/) installed, you can install it using pip, which is Python's package manager. Open your terminal or command prompt and run:
+
+    pip install virtualenv
+
+If you are using Python 3, you can use pip3 instead of pip.
 
 #### 📦 installation
 
@@ -49,12 +56,19 @@ To get started with the Django Authentication Application, follow these steps:
 
     git clone https://github.com/FMashi/Authentication.git
 
-**🛠️ Install Dependencies:** Install the required Python packages and dependencies listed in the **requirements.txt** file:
+**♻️ Activate the Virtual Environment:**
 
-    python -m venv venv
-    source venv/bin/activate
-    # On Windows, use
+Depending on your operating system, the command to activate the virtual environment will vary:
+
+##### Windows:
+
     venv\Scripts\activate
+
+##### macOS and Linux:
+
+    source venv/bin/activate
+
+**🛠️ Install Dependencies:** Install the required Python packages and dependencies listed in the **requirements.txt** file:
 
     pip install -r requirements.txt
 
