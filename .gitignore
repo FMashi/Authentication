@@ -25,9 +25,7 @@ secret_key.txt
 /templates/
 
 # Ignore database migrations
-api/migrations/
-authentication/migrations/
-
+migrations/
 # Ignore generated HTML and compiled translations
 *.html
 *.mo
