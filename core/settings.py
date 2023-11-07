@@ -25,7 +25,7 @@ SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
 DEBUG=str(os.environ.get("DEBUG")) =="1"
 
 ALLOWED_HOSTS = ['*']
-
+AUTH_USER_MODEL = 'authentication.CustomUser'
 INSTALLED_APPS = [
     'jazzmin',
     'django.contrib.admin',
@@ -48,8 +48,8 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.google',
     'allauth.socialaccount.providers.facebook',
     'allauth.socialaccount.providers.twitter',
-    "dj_rest_auth",
-    "dj_rest_auth.registration",
+    'dj_rest_auth',
+    'dj_rest_auth.registration',
 ]
 
 MIDDLEWARE = [
@@ -156,7 +156,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
-AUTH_USER_MODEL = 'authentication.CustomUser'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
@@ -303,10 +302,10 @@ ACCOUNT_UNIQUE_EMAIL = True
 ACCOUNT_CONFIRM_EMAIL_ON_GET = True
 ACCOUNT_EMAIL_VERIFICATION = "mandatory"
 
-ACCOUNT_EMAIL_CONFIRMATION_AUTHENTICATED_REDIRECT_URL = f'{BASE_URL}/api/auth/dj/login/'
-LOGIN_URL = f'{BASE_URL}/api/auth/dj/login/'
+ACCOUNT_EMAIL_CONFIRMATION_AUTHENTICATED_REDIRECT_URL = f'{BASE_URL}/api/auth/login/'
+LOGIN_URL = f'{BASE_URL}/api/auth/login/'
 
-
+JWT_AUTH_COOKIE = 'authentication'
 REST_AUTH = {
     'USE_JWT': True,
     'JWT_AUTH_COOKIE': 'access',

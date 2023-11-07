@@ -23,7 +23,7 @@ class PathRename(object):
 
 class CustomUser(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(unique=True, max_length=255,verbose_name="Email")
-    username = models.CharField(max_length=30, unique=True) 
+    username = models.CharField(max_length=30) 
     first_name = models.CharField(max_length=100, blank=True, verbose_name="First Name")
     last_name = models.CharField(max_length=100, blank=True, verbose_name="Last Name")
     date_joined = models.DateTimeField(default=timezone.now, verbose_name="Date Joined")

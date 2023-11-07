@@ -17,9 +17,10 @@ from dj_rest_auth.jwt_auth import get_refresh_view
 
 
 urlpatterns = [
-    path('registration/', include('dj_rest_auth.registration.urls')),
-    path("login/", views.CustomLoginView.as_view(), name="custom_login"),
     path('user/', UserDetailsView.as_view(), name='rest_user'),
+    path('registration/', RegisterView.as_view(), name="custom_register"),
+    
+    path("login/", views.CustomLoginView.as_view(), name="custom_login"),
     path("logout/", LogoutView.as_view(), name="rest_logout"),
     
     path("password/reset/", PasswordResetView.as_view(), name="rest_password_reset"),
@@ -34,7 +35,7 @@ urlpatterns = [
     path('github/', views.GitHubLogin.as_view(), name='github_login'),
     path('google/', views.GoogleLogin.as_view(), name='google_login'),
     
-    path("registration/account_confirm_email/<str:key>/", views.email_confirm_redirect, name="account_confirm_email"),
+    path("account_confirm_email/<str:key>/", views.email_confirm_redirect, name="account_confirm_email"),
     path("password/reset/confirm/<int:uid>/<str:token>/",
         views.password_reset_confirm_redirect,
         name="password_reset_confirm",
