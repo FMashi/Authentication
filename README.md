@@ -77,6 +77,35 @@ Depending on your operating system, the command to activate the virtual environm
     python manage.py makemigrations
     python manage.py migrate
 
+**⚙️ Additional Configuration:**
+Before running the application, you should also perform the following steps:
+
+1. Copy the example environment file:
+
+   ```shell
+   mv .env_example .env
+   ```
+
+2. Generate a secure `DJANGO_SECRET_KEY` by visiting [Djecrety](https://djecrety.ir/) or using any trusted method to create a secret key.
+
+3. Update the `.env` file with the generated `DJANGO_SECRET_KEY`:
+
+   ```shell
+   DJANGO_SECRET_KEY=<your_generated_secret_key>
+   ```
+
+4. Collect static files:
+
+   ```shell
+   python manage.py collectstatic
+   ```
+
+5. Create a superuser for administrative access:
+
+   ```shell
+   python manage.py createsuperuser
+   ```
+
 **🪄 Running the Application:**
 
     python manage.py runserver
